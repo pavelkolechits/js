@@ -7,7 +7,6 @@ for (let i = a; i <= b; i++){
 }
 console.log(c);
 
-
 //3
 let a = +prompt("число");
 for (let i = 0; i <= a; i++) {
@@ -26,10 +25,7 @@ console.log(b);
 
 //5
 let a;
-let b = 1;
-let c = 0;
-let d = 0;
-let f = 0;
+let b = 1, c = 0, d = 0, f = 0; 
 do  {
     a = +prompt(`Введите число №${b}`);
     b++;
@@ -67,9 +63,7 @@ do{
 //7
 let a = prompt("Введите число ");
 let b = +prompt("на сколько символов его сдвинуть?");
-let c;
-let d;
-let f;
+let c, d, f;
 while (b > 0) {
    b--; 
    c = a.substr(0, 1)
@@ -98,10 +92,8 @@ do {
     if (a == false) break; 
 } while (a == true);
 
-
 //9
-let a ;
-let b = 2;
+let a, b = 2;
 for ( let i = 1; b <= 11, i <= 10; i++) {
     a = b * i;
     console.log(`${b} * ${i} = ${a}`);
@@ -113,12 +105,9 @@ for ( let i = 1; b <= 11, i <= 10; i++) {
     }
 }    
 }
- 
    
-    
 //11
-let b = 1;
-let a = +prompt("Введите число ");
+let b = 1, a = +prompt("Введите число ");
 while (a > 1) {
     b *= a;
     a--; 
