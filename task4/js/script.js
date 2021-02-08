@@ -150,5 +150,6 @@ function changeSeconds (param, sec) {
     }
     console.log(`${param.hours}:${param.minutes}:${param.seconds}`)
 }
-    changeSeconds (time,280871)
+let a = +prompt();
+    changeSeconds (time,a)
   
