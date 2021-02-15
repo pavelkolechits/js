@@ -93,25 +93,31 @@
 // } while (a == true);
 
 //9
-let a, b = 2, i = 1;
-while (b < 10) {
-    a = b * i;
-    console.log(`${b} * ${i} = ${a}`);
-    if (i === 9) {
-        b++; 
-        i = 0;
-    }
-    i++;
-};
+// let a, b = 2, i = 1;
+// while (b < 10) {
+//     a = b * i;
+//     console.log(`${b} * ${i} = ${a}`);
+//     if (i === 9) {
+//         b++; 
+//         i = 0;
+//     }
+//     i++;
+// };
    
 //11
 // let b = 1, a = +prompt("Введите число ");
-// while (a > 1) {
-//     b *= a;
-//     a--; 
-// }
-// console.log(b);
+function rec(a) {
+    while (a > 1) {
+        b *= a;
+        a--; 
+    }
+}
 
+function rec(a) {
+    if(i === 1) {
+        return 1;
+    }
+    return rec(a - 1) * a;
+}
 
-
-
+[9,6,4,29,9,4]
