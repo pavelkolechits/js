@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div id="dv">
+			<input id="inp" type="text" value="" onchange="onChange()" />
+			<button onclick="clikButton2()"><</button>
+			<button onclick="clikButton1()">></button>
+			<hr />
+			<input id="td" type="text" value="" onchange="getToDo()" />
+			<button onclick="addToDo(inp)">add</button>
+		</div>
+		<hr />
+		<div id="dv2">
+            <input id="inp1" type="text" value="" onchange="getNumb1()">
+            +
+            <input id="inp2" type="text" value="" onchange="getNumb2()">
+            <br>
+            <br>
+            <button onclick="showResult(num1,num2)">посчитать</button>
+        </div>
+	</body>
+	<script src="js/script.js"></script>
+</html>
