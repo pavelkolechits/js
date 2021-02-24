@@ -1,0 +1,126 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: rgb(52, 59, 59);
+}
+.cotainer {
+	background-color: rgb(158, 165, 165);
+	margin: 40px auto;
+	height: 600px;
+	width: 500px;
+	border-radius: 25px;
+	padding: 25px;
+}
+.inner-container1 {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 25px;
+}
+.input {
+	height: 60px;
+	width: 450px;
+	border-radius: 12px;
+	outline: none;
+	border: none;
+	text-align: right;
+	cursor: default;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+.inner-container2 {
+	height: 465px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	gap: 15px;
+	grid-template-areas:
+		'bce bdel bmn2 bd '
+		'b1 b2 b3 bmn '
+		'b4 b5 b6 bpl'
+		'b7 b8 b9 bresult'
+		'und b0 bpoint bresult';
+}
+.bce {
+	grid-area: bce;
+}
+.bdel {
+	grid-area: bdel;
+}
+.bpl {
+	grid-area: bpl;
+}
+.bmn {
+	grid-area: bmn;
+}
+.bmn2 {
+	grid-area: bmn2;
+}
+.bd {
+	grid-area: bd;
+}
+.b1 {
+	grid-area: b1;
+}
+.b2 {
+	grid-area: b2;
+}
+.b3 {
+	grid-area: b3;
+}
+.b4 {
+	grid-area: b4;
+}
+.b5 {
+	grid-area: b5;
+}
+.b6 {
+	grid-area: b6;
+}
+.b7 {
+	grid-area: b7;
+}
+.b8 {
+	grid-area: b8;
+}
+.b9 {
+	grid-area: b9;
+}
+.b0 {
+	grid-area: b0;
+}
+.bpoint {
+	grid-area: bpoint;
+}
+.bresult {
+	grid-area: bresult;
+}
+.bce,
+.bdel,
+.bpl,
+.bmn,
+.bmn2,
+.bd,
+.b1,
+.b2,
+.b3,
+.b4,
+.b5,
+.b6,
+.b7,
+.b8,
+.b9,
+.b0,
+.bpoint,
+.bresult {
+	border-radius: 12px;
+	outline: none;
+	/* border: none; */
+}
+span,input {
+	font-size: 40px;
+
+	/* font-family: 'Indie Flower', cursive; */
+}
