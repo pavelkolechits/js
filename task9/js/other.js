@@ -171,6 +171,7 @@ let first = document.createElement('div');
 let last = document.createElement('div');
 let age = document.createElement('div');
 let company = document.createElement('div');
+let arrElem = [first, last, age, company];
 
 function appElem(elem, elemclass) {
 	divtable.append(elem);
@@ -207,27 +208,21 @@ function getSortFunction(fieldName) {
 	};
 }
 
+function addLi(param, fieldName) {
+	arrUsers.forEach((item) => {
+		li = document.createElement('h3');
+		param.append(li);
+		li.innerHTML = item[fieldName];
+	});
+}
+let keys = Object.keys(arrUsers[0]);
+
 function creatLI() {
-	arrUsers.forEach((item) => {
-		li = document.createElement('h3');
-		first.append(li);
-		li.innerHTML = item.Firstname;
-	});
-	arrUsers.forEach((item) => {
-		li = document.createElement('h3');
-		last.append(li);
-		li.innerHTML = item.Lastname;
-	});
-	arrUsers.forEach((item) => {
-		li = document.createElement('h3');
-		age.append(li);
-		li.innerHTML = item.Age;
-	});
-	arrUsers.forEach((item) => {
-		li = document.createElement('h3');
-		company.append(li);
-		li.innerHTML = item.Company;
-	});
+	for (i = 0; i < keys.length; i++) {
+		p = arrElem[i];
+		b = keys[i];
+		addLi(p, b);
+	}
 }
 
 creatLI();
@@ -237,7 +232,6 @@ function deletUsers() {
 	age.innerHTML = '<h2>Age<h2>';
 	company.innerHTML = '<h2>Company<h2>';
 }
-
 document.addEventListener('click', () => {
 	if (event.target.innerHTML == 'Firstname') {
 		arrUsers.sort(getSortFunction('Firstname'));
@@ -254,3 +248,24 @@ document.addEventListener('click', () => {
 	deletUsers();
 	creatLI();
 });
+
+// let aaa;
+// let ttt = true;
+// let bbb;
+// let elem;
+
+// function rrr() {
+// 	if (ttt) {
+// 		aaa = event.target.innerHTML;
+// 		elem = event.target;
+// 		elem.classList.add('ddd');
+// 		ttt = false;
+// 		console.log(elem);
+// 	} else if (ttt === false) {
+// 		bbb = event.target.innerHTML;
+// 		event.target.innerHTML = aaa
+// 		elem.classList.remove('ddd');
+// 		elem.innerHTML = bbb;
+// 		ttt = true;
+// 	}
+// }
