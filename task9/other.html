@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/other.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+    integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body >
+    <button  onclick="pageUp()" class="pd pd--mod">PgUp &#8593</button>
+    <div class="container">
+        
+        <div class="trafiklight">
+            <div id="r1" class="red"></div>
+            <div id="y1" class="yellow"></div>
+            <div id="g1" class="green"></div>
+            <button class="next" onclick="switchLight()">NEXT</button>
+        </div>
+        <div   class="list" onclick="clik(event)" onmousedown="return false" onselectstart="return false" >
+            <ol >
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+                <li >Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit<br> obcaecati officiis veritatis esse non dolor tenetur dignissimos illo quasi?</li>
+               
+            </ol>
+        </div>
+        <div class="showScroll">
+            
+        </div>
+        <div class="number">
+            <span >Random number:</span>
+            <div class="sp" id="rn" ></div>
+            <button onclick="getRandomNumber()" class="random">Ganerate random number</button>
+        </div>
+        <div class="showtext">
+            <button onclick="showOrHide()" class="showhide">Hide / show text</button>
+            <span id="sh" class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat labore eius, amet nisi vitae obcaecati tenetur iure magni adipisci iste delectus! Dicta quasi optio eveniet quas.</span>
+        </div>
+        <div class="count">
+            <div class="countlikes" onclick="addLike()">
+                <i class="far fa-thumbs-up"></i>
+                <span class="like">Like</span>
+                <div  id="cl" class="likes">0</div>
+            </div>
+        </div>
+        <div class="volume">
+            <input id="hhh" type="range" value=0>
+        </div>
+       
+        <button onclick="addVolume()">add</button>
+        <div class="changetext">
+            
+            <div class="wind1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, expedita! Unde distinctio praesentium dicta et assumenda delectus vero dolores quos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat labore eius, amet nisi vitae obcaecati tenetur iure magni adipisci iste delectus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat labore eius, amet nisi vitae obcaecati tenetur iure magni adipisci iste delectus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat labore eius, amet nisi vitae obcaecati tenetur iure magni adipisci iste delectus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat labore eius, amet nisi vitae obcaecati tenetur iure magni adipisci iste delectus!</div>
+            
+        </div>
+        <div  onmouseover="hoverOver()" onmouseout="hoverOut()" class="hover" id="h">
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+            <div class="tabl"></div>
+        </div>
+        <div class="divarea">
+            <div  onmousedown="moveDiv()" class="divarea-inner"></div>
+        </div>
+        <div class="sort">
+        </div>
+        
+        
+    </div>
+    
+</body>
+<script src="js/other.js"></script>
+</html>
