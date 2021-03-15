@@ -44,23 +44,19 @@
 
 // // ==========================================================
 let student = [
-    { name: "AAA", enrollment: 100 },
-    { name: "BBB", enrollment: 50 },
-    { name: "CCC", enrollment: 50 }]
-// // let abr = [
-//     { name: "AAA", enrollment: 100 },
-//     { name: "BBB", enrollment: 50 },
-//     { name: "CCC", enrollment: 50 }]
+	{ name: 'AAA', enrollment: 100 },
+	{ name: 'BBB', enrollment: 50 },
+	{ name: 'CCC', enrollment: 50 },
+];
 
-function changeStudent(arr) {
-    let a = arr.reduce(function(acc,item){
-        if()
-        return {...acc + [item.enrollment] : [...acc + ]} 
-    })
-
-
-
-
-
+let Output = {
+	50: [
+		{ name: 'BBB', enrollment: 50 },
+		{ name: 'CCC', enrollment: 50 },],
+	100: [{ name: 'AAA', enrollment: 100 }],
+};
+function (arr){
+    arr.reduce(function(acc,item){
+        
+    },{})
 }
-// console.log(changeStudent(student))

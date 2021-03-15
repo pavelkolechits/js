@@ -66,12 +66,12 @@ function plus() {
 		sw2 = false;
 		sw3 = false;
 		swpoint = true;
-		console.log(arrL,arr1)
+		// console.log(arrL,arr1)
 		
 	}
 	
 	
-	console.log(arrL,arr1)
+	// console.log(arrL,arr1)
 	container = inp.value;
 	arr1 = [];
 	arr1.push(container);
@@ -285,6 +285,11 @@ function Point() {
 	swpoint = false;
 }
 let swNull = true;
+
+
+
+
+
 
 function Null() {
 	if(swpoint === false || arrL[0] !== 0){

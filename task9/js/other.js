@@ -249,23 +249,44 @@ document.addEventListener('click', () => {
 	creatLI();
 });
 
-// let aaa;
-// let ttt = true;
-// let bbb;
-// let elem;
+// let firstTagInnerHtml;
+// let isFirstClick = true;
+// let secondTagInnerHtml;
+// let clickedTag;
 
 // function rrr() {
-// 	if (ttt) {
-// 		aaa = event.target.innerHTML;
-// 		elem = event.target;
-// 		elem.classList.add('ddd');
-// 		ttt = false;
-// 		console.log(elem);
-// 	} else if (ttt === false) {
-// 		bbb = event.target.innerHTML;
-// 		event.target.innerHTML = aaa
-// 		elem.classList.remove('ddd');
-// 		elem.innerHTML = bbb;
-// 		ttt = true;
+// 	if (isFirstClick) {
+// 		firstTagInnerHtml = event.target.innerHTML;
+// 		clickedTag = event.target;
+// 		clickedTag.classList.add('ddd');
+// 		isFirstClick = false;
+// 	} else {
+// 		secondTagInnerHtml = event.target.innerHTML;
+// 		event.target.innerHTML = firstTagInnerHtml
+// 		clickedTag.classList.remove('ddd');
+// 		clickedTag.innerHTML = secondTagInnerHtml;
+// 		isFirstClick = true;
 // 	}
 // }
+// let student = [
+// 	{ name: 'AAA', enrollment: 100 },
+// 	{ name: 'BBB', enrollment: 50 },
+// 	{ name: 'CCC', enrollment: 150 },
+// 	{ name: 'AAA', enrollment: 50 },
+// 	{ name: 'BBB', enrollment: 250 },
+// 	{ name: 'AAA', enrollment: 150 },
+// 	{ name: 'CCC', enrollment: 250 },
+// 	{ name: 'CCC', enrollment: 50 },
+// ];
+
+// let obj = student.reduce((acc, item) => {
+// 	if (acc[item.enrollment]) {
+// 		acc[item.enrollment].push(item);
+// 	} else {
+// 		acc[item.enrollment] = [item];
+// 	}
+// 	return acc;
+// }, {});
+
+// console.log(obj);
+document.addEventListener("click")
