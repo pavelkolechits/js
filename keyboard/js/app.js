@@ -1,14 +1,36 @@
-const en = "`qwertyuiop[]asdfghjkl;'zxcvbnm,./1234567890-=";
-const enUp = "`QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,./1234567890-=";
-const enUpShift = `~qwertyuiop{}asdfghjkl:"zxcvbnm<>?!@#$%^&*()_+`;
-const enShift = `~QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?!@#$%^&*()_+`;
+const en = "`qwertyuiop[]asdfghjkl;'zxcvbnm,./1234567890-= ";
+const enUp = "`QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,./1234567890-= ";
+const enUpShift = `~qwertyuiop{}asdfghjkl:"zxcvbnm<>?!@#$%^&*()_+ `;
+const enShift = `~QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?!@#$%^&*()_+ `;
+
+const ru = 'ёйцукенгшщзхъфывапролджэячсмитьбю.1234567890-= ';
+const ruUp = 'ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ.1234567890-= ';
+const ruUpShift = `ёйцукенгшщзхъфывапролджэячсмитьбю,!"№;%:?*()_+ `;
+const ruShift = `ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,!"№;%:?*()_+ `;
+
 const arrEn = en.split('');
 const arrEnUp = enUp.split('');
 const arrEnUpShift = enUpShift.split('');
 const arrEnShift = enShift.split('');
+
+const arrRu = ru.split('');
+const arrRuUp = ruUp.split('');
+const arrRuUpShift = ruUpShift.split('');
+const arrRuShift = ruShift.split('');
+
 const allSymbol = [];
-for (let i = 0; i < 46; i++) {
-	allSymbol.push([arrEn[i], arrEnUp[i], arrEnUpShift[i], arrEnShift[i]]);
+
+for (let i = 0; i < 47; i++) {
+	allSymbol.push([
+		arrEn[i],
+		arrEnUp[i],
+		arrEnUpShift[i],
+		arrEnShift[i],
+		arrRu[i],
+		arrRuUp[i],
+		arrRuUpShift[i],
+		arrRuShift[i],
+	]);
 }
 function createButton(param) {
 	allSymbol.forEach((item) => {
@@ -41,14 +63,14 @@ document.body.append(Alt);
 Alt.innerHTML = 'Alt';
 Alt.id = 'alt';
 
-let Space = document.createElement('button');
-document.body.append(Space);
-Space.style.whiteSpace = 'pre-wrap';
-Space.innerHTML = '                 ';
+let space = arrButtons[46];
+space.style.width = '100px';
+space.style.height = '15px';
 
 let BackSpace = document.createElement('button');
 document.body.append(BackSpace);
 BackSpace.innerHTML = 'BackSpace';
+BackSpace.id = 'BackSpace';
 
 let Enter = document.createElement('button');
 document.body.append(Enter);
@@ -67,16 +89,30 @@ creatArrow('↓', 'arrowDown');
 
 let toggleCaps = true;
 function pushCapsLock() {
-	if (toggleCaps) {
-		CapsLock.style.background = '#ccc';
-		innerButton(1);
-	}
-	if (!toggleCaps) {
-		CapsLock.style.background = '';
-		innerButton(0);
-	}
-	if (!toggleShift) {
-		innerButton(2);
+	if (!toggleLang) {
+		if (toggleCaps) {
+			CapsLock.style.background = '#ccc';
+			innerButton(5);
+		}
+		if (!toggleCaps) {
+			CapsLock.style.background = '';
+			innerButton(1);
+		}
+		if (!toggleShift) {
+			innerButton(6);
+		}
+	} else {
+		if (toggleCaps) {
+			CapsLock.style.background = '#ccc';
+			innerButton(1);
+		}
+		if (!toggleCaps) {
+			CapsLock.style.background = '';
+			innerButton(0);
+		}
+		if (!toggleShift) {
+			innerButton(2);
+		}
 	}
 	toggleCaps = !toggleCaps;
 }
@@ -88,43 +124,69 @@ function addInStr(event, param) {
 	if (event.target.innerHTML !== 'Enter') {
 		inner += event.target.innerHTML;
 	}
+	if (event.target.id === 'space') {
+		inner += ' ';
+	}
 	textArea.value = inner;
 	textArea.innerHTML = '';
 	textArea.value = rightStr + inner + param + leftStr;
 	inner = '';
-	Coord();
+	textArea.focus();
+	return textArea.setSelectionRange(++coord, coord);
 }
-function Coord() {
-	textArea.setSelectionRange(coord, coord);
-}
+
 document.querySelector('#caps').onclick = pushCapsLock;
 let textArea = document.querySelector('#text');
+
 function pushButton(event) {
 	addInStr(event, '');
-
-	if (!toggleShift) {
-		Shift.style.background = '';
-		innerButton(0);
+	if (!toggleLang) {
+		if (!toggleShift) {
+			Shift.style.background = '';
+			innerButton(4);
+		}
+		if (!toggleShift && !toggleCaps) {
+			innerButton(5);
+			toggleShift = true;
+		}
+	} else {
+		if (toggleShift) {
+			Shift.style.background = '';
+			innerButton(0);
+		}
+		if (!toggleShift && !toggleCaps) {
+			innerButton(1);
+			toggleShift = true;
+		}
 	}
-	if (!toggleShift && !toggleCaps) {
-		innerButton(1);
-		toggleShift = true;
-	}
+	Alt.style.background = '';
 }
 arrButtons.forEach((i) => {
 	i.onclick = pushButton;
 });
 let toggleShift = true;
 function pushShift() {
-	if (toggleCaps) {
-		innerButton(3);
+	if (!toggleAlt) {
+		if (toggleCaps) {
+			innerButton(6);
+		}
+		if (!toggleCaps) {
+			innerButton(5);
+		}
+		toggleLang = !toggleLang;
+		toggleShift = false;
+	} else {
+		if (toggleCaps) {
+			innerButton(3);
+		}
+		if (!toggleCaps) {
+			innerButton(2);
+		}
+		Shift.style.background = '#ccc';
+		toggleShift = false;
+		switchLang();
 	}
-	if (!toggleCaps) {
-		innerButton(2);
-	}
-	Shift.style.background = '#ccc';
-	toggleShift = false;
-	switchLang();
+	Alt.style.background = '';
 }
 document.querySelector('#shift').onclick = pushShift;
 let toggleAlt = true;
@@ -138,7 +200,9 @@ function pushAlt() {
 	switchLang();
 }
 document.querySelector('#alt').onclick = pushAlt;
+
 let toggleLang = true;
+
 function switchLang() {
 	if (!toggleAlt && !toggleShift) {
 		toggleLang = !toggleLang;
@@ -153,7 +217,7 @@ function getCaretPos() {
 
 		return --textArea.selectionEnd;
 	} else if (toggleLeftRight) {
-		return ++textArea.selectionStart;
+		return textArea.selectionStart;
 	}
 }
 let coord;
@@ -164,7 +228,7 @@ document.addEventListener('click', cleanForm);
 
 function removeToRight() {
 	textArea.focus();
-	return textArea.setSelectionRange(coord, coord);
+	return textArea.setSelectionRange(coord + 1, coord + 1);
 }
 document.querySelector('#arrowRight').onclick = removeToRight;
 
@@ -173,11 +237,62 @@ let toggleLeftRight;
 function removeToLeft() {
 	textArea.focus();
 	toggleLeftRight = false;
-	return textArea.setSelectionRange(coord, coord);
+	return textArea.setSelectionRange(coord - 1, coord);
 }
 
 document.querySelector('#arrowLeft').onclick = removeToLeft;
+
 function pushEnter() {
 	addInStr(event, '\n');
 }
+
 document.querySelector('#enter').onclick = pushEnter;
+
+function pushBackspace() {
+	let string = textArea.value;
+	let rightStr = string.slice(0, coord - 1);
+	let leftStr = string.slice(coord);
+	if (event.target.innerHTML !== 'Enter' && event.target.innerHTML !== 'BackSpace') {
+		inner += event.target.innerHTML;
+	}
+	textArea.value = inner;
+	textArea.innerHTML = '';
+	textArea.value = rightStr + inner + leftStr;
+	inner = '';
+	textArea.focus();
+	return textArea.setSelectionRange(--coord, coord);
+}
+document.querySelector('#BackSpace').onclick = pushBackspace;
+
+// document.addEventListener("click",() => console.log(event))
+
+let arrLine = [];
+
+function getCoordEnter() {
+	let arr = textArea.value.split('');
+	let count = 0;
+
+	arr.forEach((i) => {
+		count++;
+		if (i === '\n') {
+			arrLine.push(count);
+		}
+	});
+}
+function pushDown() {
+	getCoordEnter();
+	let startCoord;
+	for (let i = 0; i < arrLine.length; i++) {
+		if (arrLine[i] <= coord && arrLine[i + 1] >= coord) {
+			startCoord = coord - arrLine[i];
+			coord = arrLine[i + 1] + startCoord;
+			break;
+		}
+	}
+	if (coord >= 0 && coord <= arrLine[0]) {
+		coord = arrLine[0] + coord;
+	}
+	textArea.focus();
+	textArea.setSelectionRange(coord, coord);
+}
+document.querySelector('#arrowDown').onclick = pushDown;
