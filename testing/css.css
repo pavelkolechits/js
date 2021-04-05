@@ -1,0 +1,44 @@
+.red {
+	width: 100px;
+	height: 100px;
+	background-color: rgb(165, 111, 111);
+	border-radius: 50%;
+	transition: 1s linear;
+	position: absolute;
+}
+.div {
+	width: 300px;
+	height: 200px;
+	/* background-color: rgb(64, 107, 55); */
+    background-image: url(../testing/img/images.jpg);
+	/* border-radius: 50%; */
+	transition: 1s linear;
+	position: absolute;
+}
+.inner {
+	width: 300px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+.div2 {
+	width: 20px;
+	height: 20px;
+	background-color: rgb(64, 107, 55);
+	border-radius: 50%;
+	transition: 1s linear;
+	position: absolute;
+}
+.div1 {
+	position: absolute;
+	margin: 200px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    font-size: 50px;
+}
+body{
+	background-color:aqua;
+}

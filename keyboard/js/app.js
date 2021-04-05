@@ -89,7 +89,7 @@ creatArrow('↓', 'arrowDown');
 
 let toggleCaps = true;
 function pushCapsLock() {
-	if (!toggleLang) {
+	if (toggleLang) {
 		if (toggleCaps) {
 			CapsLock.style.background = '#ccc';
 			innerButton(5);
@@ -296,3 +296,23 @@ function pushDown() {
 	textArea.setSelectionRange(coord, coord);
 }
 document.querySelector('#arrowDown').onclick = pushDown;
+
+function pushUp() {
+	getCoordEnter();
+	let startCoord;
+	if (coord >= arrLine[0] && coord <= arrLine[1]) {
+		coord = startCoord;
+	}
+	for (let i = 0; i < arrLine.length; i++) {
+		if (arrLine[i] <= coord && arrLine[i + 1] >= coord) {
+			startCoord = coord - arrLine[i];
+			coord = arrLine[i - 1] + startCoord;
+			break;
+		}
+	}
+
+	textArea.focus();
+	textArea.setSelectionRange(coord, coord);
+}
+
+document.querySelector('#arrowUp').onclick = pushUp;
