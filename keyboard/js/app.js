@@ -89,31 +89,31 @@ creatArrow('↓', 'arrowDown');
 
 let toggleCaps = true;
 function pushCapsLock() {
-	if (toggleLang) {
-		if (toggleCaps) {
-			CapsLock.style.background = '#ccc';
-			innerButton(5);
-		}
-		if (!toggleCaps) {
-			CapsLock.style.background = '';
-			innerButton(1);
-		}
-		if (!toggleShift) {
-			innerButton(6);
-		}
-	} else {
-		if (toggleCaps) {
-			CapsLock.style.background = '#ccc';
-			innerButton(1);
-		}
-		if (!toggleCaps) {
-			CapsLock.style.background = '';
-			innerButton(0);
-		}
-		if (!toggleShift) {
-			innerButton(2);
-		}
+	// if (toggleLang) {
+	// 	if (toggleCaps) {
+	// 		CapsLock.style.background = '#ccc';
+	// 		innerButton(5);
+	// 	}
+	// 	if (!toggleCaps) {
+	// 		CapsLock.style.background = '';
+	// 		innerButton(1);
+	// 	}
+	// 	if (!toggleShift) {
+	// 		innerButton(6);
+	// 	}
+	// } else {
+	if (toggleCaps) {
+		CapsLock.style.background = '#ccc';
+		innerButton(1);
 	}
+	if (!toggleCaps) {
+		CapsLock.style.background = '';
+		innerButton(0);
+	}
+	if (!toggleShift) {
+		innerButton(2);
+	}
+	// }
 	toggleCaps = !toggleCaps;
 }
 let inner = '';
@@ -140,25 +140,25 @@ let textArea = document.querySelector('#text');
 
 function pushButton(event) {
 	addInStr(event, '');
-	if (!toggleLang) {
-		if (!toggleShift) {
-			Shift.style.background = '';
-			innerButton(4);
-		}
-		if (!toggleShift && !toggleCaps) {
-			innerButton(5);
-			toggleShift = true;
-		}
-	} else {
-		if (toggleShift) {
-			Shift.style.background = '';
-			innerButton(0);
-		}
-		if (!toggleShift && !toggleCaps) {
-			innerButton(1);
-			toggleShift = true;
-		}
+	// if (!toggleLang) {
+	// 	if (!toggleShift) {
+	// 		Shift.style.background = '';
+	// 		innerButton(4);
+	// 	}
+	// 	if (!toggleShift && !toggleCaps) {
+	// 		innerButton(5);
+	// 		toggleShift = true;
+	// 	}
+	// } else {
+	if (!toggleShift) {
+		Shift.style.background = '';
+		innerButton(0);
 	}
+	if (!toggleShift && !toggleCaps) {
+		innerButton(1);
+		toggleShift = true;
+	}
+	// }
 	Alt.style.background = '';
 }
 arrButtons.forEach((i) => {
@@ -166,28 +166,29 @@ arrButtons.forEach((i) => {
 });
 let toggleShift = true;
 function pushShift() {
-	if (!toggleAlt) {
-		if (toggleCaps) {
-			innerButton(6);
-		}
-		if (!toggleCaps) {
-			innerButton(5);
-		}
-		toggleLang = !toggleLang;
-		toggleShift = false;
-	} else {
-		if (toggleCaps) {
-			innerButton(3);
-		}
-		if (!toggleCaps) {
-			innerButton(2);
-		}
-		Shift.style.background = '#ccc';
-		toggleShift = false;
-		switchLang();
+	// if (!toggleAlt) {
+	// 	if (toggleCaps) {
+	// 		innerButton(6);
+	// 	}
+	// 	if (!toggleCaps) {
+	// 		innerButton(5);
+	// 	}
+	// 	toggleLang = !toggleLang;
+	// 	toggleShift = false;
+	// } else {
+	if (toggleCaps) {
+		innerButton(3);
 	}
+	if (!toggleCaps) {
+		innerButton(2);
+	}
+	Shift.style.background = '#ccc';
+	toggleShift = false;
+	// switchLang();
+
 	Alt.style.background = '';
 }
+
 document.querySelector('#shift').onclick = pushShift;
 let toggleAlt = true;
 function pushAlt() {
